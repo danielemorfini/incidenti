@@ -1,0 +1,42 @@
+1) Elenco degli INCIDENTI
+
+SELECT id, data, luogo, codice 
+FROM sinistro;
+
+
+2) Inserire un incidente comprensivo dei veicoli coinvolti
+
+INSERT INTO sinistro (data, luogo, codice)
+VALUES 
+("$data", "$luogo", "$codice"),
+("$data", "$luogo", "$codice");
+
+
+3) Visualizzare l'elenco dei veicoli coinvolti in un incidente
+
+SELECT targa, luogo, data, codice
+FROM mezzo, sinistro, veicolo_coinvolto
+WHERE mezzo.id=veicolo_coinvolto.id_mezzo
+AND sinistro.id=veicolo_coinvolto.id_sinistro 
+AND sinistro.id=2;
+
+
+4) Inserire, per un dato incidente, l'ammontare del danno per ogni veicolo
+
+INSERT INTO sinistro (data, luogo, codice)
+VALUES ("2022-03-04", "Albairate", "Albi");
+
+INSERT INTO veicolo_coinvolto (id_mezzo, id_sinistro, importo)
+VALUES (3, 6, 23.76);
+
+INSERT INTO veicolo_coinvolto (id_mezzo, id_sinistro, importo)
+VALUES (9, 6, 33.67);
+
+
+5) Visualizzare tutti gli incidenti in cui è coinvolta una certa targa
+
+SELECT targa, codice, data, luogo, importo
+FROM mezzo, sinistro, veicolo_coinvolto
+WHERE mezzo.id=veicolo_coinvolto.id_mezzo
+AND sinistro.id=veicolo_coinvolto.id_sinistro
+AND mezzo.targa="II999II";

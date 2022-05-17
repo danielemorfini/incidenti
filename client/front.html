@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Incidenti</title>
+  
+  <link rel="stylesheet" href="front.css">
+  <script src="middleware.js"></script>
+  <script src="index.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <div class="form">
+      <div class="entry">
+        <h1>Mezzo</h1>
+        <input id="targa" type="text" placeholder="Inserire la targa">
+      </div>
+      <div class="entry">
+        <h1>Sinistro</h1>
+        <input id="data" type="date">
+        <input id="time" type="time">
+        <input id="luogo" type="text" placeholder="Luogo incidente">
+        <input id="codice" type="text" placeholder="Codice sinistro">
+      </div> 
+      <div class="entry">
+        <h1>Veicoli coinvolti</h1>
+        <input id="importo" type="number" min="0" placeholder="Importo danno">
+      </div>
+      <div class="entry">
+        <!-- #sendPostSinistro -->
+        <!-- #sendPostImporto -->
+        <input class="send" id="sendSinistro" type="button" value="Invia Sinistro">
+        <input class="send" id="sendImporto" type="button" value="Invia Importo">
+      </div>
+    </div>
+    <div class="table">
+      <div class="action-wrapper">
+        <input class="action" id="getIncidenti" type="button" value="GetIncidenti()">
+        <input class="action" id="getVeicoliCoinvolti" type="button" value="getVeicoliCoinvolti()">
+        <input class="action" id="getIncidentiTarga" type="button" value="getIncidentiTarga()">
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Data</th>
+            <th>Luogo</th>
+            <th>Codice</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
