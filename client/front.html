@@ -13,11 +13,17 @@
 <body>
 
   <div class="container">
+
+    <!-- FORM per inserire un sinistro -->
     <div class="form">
+
+      <!-- Campo con dati riguardanti la TARGA del mezzo -->
       <div class="entry">
         <h1>Mezzo</h1>
         <input id="targa" type="text" placeholder="Inserire la targa">
       </div>
+
+      <!-- Campo con dati riguardati la DATA, il LUOGO e il CODICE del sinistro -->
       <div class="entry">
         <h1>Sinistro</h1>
         <input id="data" type="date">
@@ -25,24 +31,31 @@
         <input id="luogo" type="text" placeholder="Luogo incidente">
         <input id="codice" type="text" placeholder="Codice sinistro">
       </div> 
+
+      <!-- Campo con dati riguardanti l'IMPORTO DANNI per veicolo -->
       <div class="entry">
         <h1>Veicoli coinvolti</h1>
         <input id="importo" type="number" min="0" placeholder="Importo danno">
       </div>
+
+      <!-- Campo BUTTONS per inviare i dati -->
       <div class="entry">
-        <!-- #sendPostSinistro -->
-        <!-- #sendPostImporto -->
         <input class="send" id="sendSinistro" type="button" value="Invia Sinistro">
         <input class="send" id="sendImporto" type="button" value="Invia Importo">
       </div>
     </div>
     
+    <!-- Tabella dove vengono visualizzati i dati dal DATABASE -->
     <div class="table">
+      
+      <!-- Campo BUTTONS per richiedere le QUERY al DBMS -->
       <div class="action-wrapper">
         <input class="action" id="getIncidenti" type="button" value="GetIncidenti()">
         <input class="action" id="getVeicoliCoinvolti" type="button" value="getVeicoliCoinvolti()">
         <input class="action" id="getIncidentiTarga" type="button" value="getIncidentiTarga()">
       </div>
+
+      <!-- Tabella finale di visualizzazione -->
       <table>
         <thead>
           <tr>
