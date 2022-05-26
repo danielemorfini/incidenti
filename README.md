@@ -10,15 +10,22 @@ Progetto atto a simulare un sistema di gestione dell'anagrafica degli incidenti 
 
 # Linguaggi e tecnologie utilizzati per lo sviluppo: #
   - **Frontend**: HTML, CSS
-  - **Logica CLIENT**: JavaScript
-  - **Logica SERVER, Backend**: PHP
+  - **Logica CLIENT**: JavaScript, JSON
+  - **Logica SERVER, Backend**: PHP, JSON
   - **Ambiente di testing**: XAMPP, EasyPHP
 
 # Modello architetturale: REST #
 Representational state transfer (REST) è uno stile architetturale per sistemi distribuiti.
 Il termine REST rappresenta un sistema di trasmissione di dati su HTTP senza ulteriori livelli, 
 il sistema non prevede il concetto di sessione, è quindi stateless.
-La comunicazione tra Client e Server avviene attraverso i pricipali metodi HTTP quali GET, POST, PUT, DELETE
+La comunicazione tra Client e Server avviene attraverso i pricipali metodi HTTP, con scambio dati attraverso linguaggio JSON:
+
+**URL endopoints**
+  - [GET] ./restmiddleware.php -> getIncidenti()
+  - [GET] ./restmiddleware.php/?codice=$codice -> getVeicoliCoinvolti() 
+  - [GET] ./restmiddleware.php/?targa=$targa -> getIncidentiTarga()
+  - [POST] ./restmiddleware.php -> postSinistro()
+  - [POST] ./restmiddleware.php -> postImporto()
 
 
 # Step da seguire per un corretto inserimento #
@@ -32,3 +39,7 @@ Inserimento sinistro con piu mezzi e importi:
 3. Targa, CODICE_UGUALE, importo   <> Invia Importo
 4. Targa, CODICE_UGUALE, importo   <> Invia Importo
 5. Inserire per N volte quante necessarie
+
+# Contatti #
+ - Email: daniele.morfini@gmail.com
+ - Link progetto: https://github.com/danielemorfini/incidenti
